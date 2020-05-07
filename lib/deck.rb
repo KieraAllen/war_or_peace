@@ -8,5 +8,4 @@ class Deck
   def rank_of_card_at(position)
     @cards[position].rank
   end
-
 end

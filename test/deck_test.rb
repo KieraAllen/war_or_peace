@@ -29,13 +29,15 @@ class DeckTest < Minitest::Test
     assert_equal 12, @deck.rank_of_card_at(0)
     assert_equal 14, @deck.rank_of_card_at(2)
   end
+
+  def test_it_can_list_cards
+    expected = [@card1, @card2, @card3]
+
+    assert_equal expected, @deck.cards
+  end
+
 end
 
-
-
-# pry(main)> deck.cards
-# #=> [#<Card:0x007fbfd18490e8...>, #<Card:0x007fbfd19f4fa0...>, #<Card:0x007fbfd18555a0...>]
-#
 # pry(main)> deck.high_ranking_cards
 # #=> [#<Card:0x007fbfd18490e8...>, #<Card:0x007fbfd18555a0...>]
 #
