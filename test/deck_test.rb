@@ -5,6 +5,7 @@ require './lib/deck'
 
 
 class DeckTest < Minitest::Test
+
   def setup
     @card1 = Card.new(:diamond, 'Queen', 12)
     @card2 = Card.new(:spade, '3', 3)
@@ -34,6 +35,12 @@ class DeckTest < Minitest::Test
     expected = [@card1, @card2, @card3]
 
     assert_equal expected, @deck.cards
+  end
+
+  def test_it_has_high_ranking_cards
+    expected = [@card1, @card3]
+
+    assert_equal expected, @deck.high_ranking_cards
   end
 
 end
