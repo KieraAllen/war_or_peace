@@ -16,25 +16,23 @@ class DeckTest < Minitest::Test
   end
 
   def test_it_exists
+
     assert_instance_of Deck, @deck
+  end
+
+  def test_it_can_read_card_attribute
+
+    assert_equal @cards, @deck.cards
+  end
+
+  def test_it_can_give_card_rank_at_index_position
+    assert_equal 12, @deck.rank_of_card_at(0)
+    assert_equal 14, @deck.rank_of_card_at(2)
   end
 end
 
 
-# pry(main)> cards = [card1, card2, card3]
-#
-# pry(main)> deck = Deck.new(cards)
-# #=> #<Deck:0x007fbfd2984808 @cards=[#<Card:0x007fbfd18490e8...>, #<Card:0x007fbfd19f4fa0...>, #<Card:0x007fbfd18555a0...>]>
-#
-# pry(main)> deck.cards
-# #=> [#<Card:0x007fbfd18490e8...>, #<Card:0x007fbfd19f4fa0...>, #<Card:0x007fbfd18555a0...>]
-#
-# pry(main)> deck.rank_of_card_at(0)
-# #=> 12
-#
-# pry(main)> deck.rank_of_card_at(2)
-# #=> 14
-#
+
 # pry(main)> deck.cards
 # #=> [#<Card:0x007fbfd18490e8...>, #<Card:0x007fbfd19f4fa0...>, #<Card:0x007fbfd18555a0...>]
 #
