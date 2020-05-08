@@ -47,6 +47,7 @@ class DeckTest < Minitest::Test
 
   def test_it_can_remove_card_at_0_index
     assert_equal @card1, @deck.remove_card
+    assert_equal [@card2, @card3], @deck.cards
   end
 end
 
