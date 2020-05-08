@@ -43,14 +43,15 @@ class DeckTest < Minitest::Test
     assert_equal expected, @deck.high_ranking_cards
   end
 
+  def test_it_can_give_percentage_of_high_ranking_cards
+
+
+    assert_equal 66.67, @deck.percent_high_ranking
+  end
+
 end
 
-# pry(main)> deck.high_ranking_cards
-# #=> [#<Card:0x007fbfd18490e8...>, #<Card:0x007fbfd18555a0...>]
-#
-# pry(main)> deck.percent_high_ranking
-# #=> 66.67
-#
+
 # pry(main)> deck.remove_card
 # #=> #<Card:0x007fbfd18490e8 @rank=12, @suit=:diamond, @value="Queen">
 #
