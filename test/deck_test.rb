@@ -17,12 +17,10 @@ class DeckTest < Minitest::Test
   end
 
   def test_it_exists
-
     assert_instance_of Deck, @deck
   end
 
   def test_it_can_read_card_attribute
-
     assert_equal @cards, @deck.cards
   end
 
@@ -44,17 +42,14 @@ class DeckTest < Minitest::Test
   end
 
   def test_it_can_give_percentage_of_high_ranking_cards
-
-
     assert_equal 66.67, @deck.percent_high_ranking
   end
 
+  def test_it_can_remove_card_at_0_index
+    assert_equal @card1, @deck.remove_card
+  end
 end
 
-
-# pry(main)> deck.remove_card
-# #=> #<Card:0x007fbfd18490e8 @rank=12, @suit=:diamond, @value="Queen">
-#
 # pry(main)> deck.cards
 # #=> [#<Card:0x007fbfd19f4fa0...>, #<Card:0x007fbfd18555a0...>]
 #
