@@ -27,17 +27,13 @@ class PlayerTest < Minitest::Test
   def test_it_has_a_deck
     assert_equal @deck, @player.deck
   end
+
+  def test_has_lost_default_is_false
+    assert_equal false, @player.has_lost?
+  end
 end
 
 
-
-
-# pry(main)> player.deck
-# #=> #<Deck:0x007f9cc396bdf8 @cards=[#<Card:0x007f9cc3a73a98...>, #<Card:0x007f9cc3a03720...>, #<Card:0x007f9cc3a44c98...>]>
-#
-# pry(main)> player.has_lost?
-# #=> false
-#
 # pry(main)> player.deck.remove_card
 # #=> #<Card:0x007f9cc3a73a98 @rank=12, @suit=:diamond, @value="Queen">
 #
