@@ -19,6 +19,14 @@ class PlayerTest < Minitest::Test
   def test_it_exists
     assert_instance_of Player, @player
   end
+
+  def test_it_has_a_name
+    assert_equal "Clarisa", @player.name
+  end
+
+  def test_it_has_a_deck
+    assert_equal @deck, @player.deck
+  end
 end
 
 
