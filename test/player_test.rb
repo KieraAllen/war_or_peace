@@ -31,6 +31,10 @@ class PlayerTest < Minitest::Test
   def test_has_lost_default_is_false
     assert_equal false, @player.has_lost?
   end
+
+  def test_it_can_remove_card
+    assert_equal @card1, @player.deck.remove_card
+  end
 end
 
 
