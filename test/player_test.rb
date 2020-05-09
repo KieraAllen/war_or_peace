@@ -44,8 +44,15 @@ class PlayerTest < Minitest::Test
     assert_equal @card3, @player.deck.remove_card
     assert_equal true, @player.has_lost?
   end
+
+  def test_it_has_empty_deck_when_has_lost_is_true
+    assert_equal @card1, @player.deck.remove_card
+    assert_equal false, @player.has_lost?
+    assert_equal @card2, @player.deck.remove_card
+    assert_equal false, @player.has_lost?
+    assert_equal @card3, @player.deck.remove_card
+    assert_equal true, @player.has_lost?
+    assert_equal [], @player.deck.cards
+    assert_equal @deck, @player.deck
+  end
 end
-
-
-# pry(main)> player.deck
-# #=> #<Deck:0x007f9cc396bdf8 @cards=[]>
