@@ -38,15 +38,12 @@ class TurnTest < Minitest::Test
   def test_it_starts_with_no_spoils
     assert_equal [], @turn.spoils_of_war
   end
+
+  def test_it_has_a_basic_turn
+    assert_equal :basic, @turn.type
+  end
 end
 
-
-# pry(main)> turn.spoils_of_war
-# #=> []
-#
-# pry(main)> turn.type
-# #=> :basic
-#
 # pry(main)> winner = turn.winner
 # #=> #<Player:0x007fa3edae29d0 @deck=#<Deck:0x007fa3eda472c8...>, @name="Megan">
 #
