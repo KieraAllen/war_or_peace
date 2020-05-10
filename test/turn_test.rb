@@ -42,6 +42,10 @@ class TurnTest < Minitest::Test
   def test_it_has_a_basic_turn
     assert_equal :basic, @turn.type
   end
+
+  def test_it_has_a_winner
+    assert_equal @player1, @turn.winner
+  end
 end
 
 # pry(main)> winner = turn.winner
