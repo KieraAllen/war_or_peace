@@ -34,15 +34,13 @@ class TurnTest < Minitest::Test
     assert_equal @player1, @turn.player1
     assert_equal @player2, @turn.player2
   end
+
+  def test_it_starts_with_no_spoils
+    assert_equal [], @turn.spoils_of_war
+  end
 end
 
 
-# pry(main)> turn.player1
-# #=> #<Player:0x007fa3edae29d0 @deck=#<Deck:0x007fa3eda472c8...>, @name="Megan">
-#
-# pry(main)> turn.player2
-# #=> #<Player:0x007fa3ed9e6568 @deck=#<Deck:0x007fa3ee11ee48...>, @name="Aurora">
-#
 # pry(main)> turn.spoils_of_war
 # #=> []
 #
