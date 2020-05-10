@@ -39,21 +39,51 @@ class TurnTest < Minitest::Test
     assert_equal [], @turn.spoils_of_war
   end
 
-  def test_it_has_a_basic_turn
+  def test_it_has_a_basic_type_of_turn
     assert_equal :basic, @turn.type
   end
 
-  def test_it_has_a_winner
-    assert_equal @player1, @turn.winner
+  def test_it_has_a_basic_winner
+    winner = @turn.winner
+    assert_equal @player1, winner
   end
-
-  def test_it_has_spoils_of_war
-    @turn.pile_cards
-    assert_equal [@card1, @card3], @turn.spoils_of_war
-  end
+  #
+  # def test_it_has_spoils_of_war
+  #   @turn.pile_cards
+  #   assert_equal [@card1, @card3], @turn.spoils_of_war
+  # end
+  #
+  # def test_it_can_award_spoils_to_winner
+  #   @turn.pile_cards
+  #
+  #   winner_deck = [@card2, @card5, @card8, @card1, @card3]
+  #   # loser_deck = [@card4, @card6, @card7]
+  #
+  #   assert_equal winner_deck, @player1.deck
+  #   # assert_equal loser_deck, @player2.deck
+  # end
 end
 
+# pry(main)> winner = turn.winner
+# #=> #<Player:0x007fa3edae29d0 @deck=#<Deck:0x007fa3eda472c8...>, @name="Megan">
+#
+# pry(main)> turn.pile_cards
+#
+# pry(main)> turn.spoils_of_war
+# #=> [#<Card:0x007fa3edaa0df0 @rank=11, @suit=:heart, @value="Jack">, #<Card:0x007fa3ed98d9b8 @rank=9, @suit=:heart, @value="9">]
+#
+# pry(main)> turn.award_spoils(winner)
+#
+# pry(main)> player1.deck
+# #=> #<Deck:0x007fa3eda472c8 @cards=[#<Card:0x007fa3eda519a8...>, #<Card:0x007fa3edb263d8...>, #<Card:0x007fa3eda89308...>, #<Card:0x007fa3edaa0df0...>, #<Card:0x007fa3ed98d9b8...>]>
+# pry(main)> player2.deck
+# #=> #<Deck:0x007fa3ee11ee48 @cards=[#<Card:0x007fa3ee14ef80...>, #<Card:0x007fa3eda3e1f0...>, #<Card:0x007fa3edad1cc0...>]>
 
+
+# pry(main)> turn.pile_cards
+#
+# pry(main)> turn.spoils_of_war
+# #=> [#<Card:0x007fa3edaa0df0 @rank=11, @suit=:heart, @value="Jack">, #<Card:0x007fa3ed98d9b8 @rank=9, @suit=:heart, @value="9">]
 # pry(main)> turn.award_spoils(winner)
 #
 # pry(main)> player1.deck
