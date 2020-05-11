@@ -4,7 +4,7 @@ Created by [Kiera Allen](https://github.com/KieraAllen)
 #### [Turing School](https://turing.io/) [War or Peace project](https://backend.turing.io/module1/projects/war_or_peace/)
 
 ### Overview
-_Build a program to simulate a game of war. A user will be able to create two players, and watch them ‘play’ the game._
+_Build a program to simulate a game of war. A user will be able to create two players and watch them ‘play’ the game._
 
 ### Learning Goals
 * Follow an interaction pattern
