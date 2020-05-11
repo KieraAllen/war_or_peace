@@ -75,11 +75,21 @@ class TurnTest < Minitest::Test
 
     assert_equal :war, turn.type
   end
+
+  def test_it_has_a_war_winner
+      deck1 = Deck.new([@card1, @card2, @card5, @card8])
+      deck2 = Deck.new([@card4, @card3, @card6, @card7])
+
+      player1 = Player.new("Megan", deck1)
+      player2 = Player.new("Aurora", deck2)
+
+      turn = Turn.new(player1, player2)
+
+      winner = turn.winner
+      assert_equal player2, winner
+    end
 end
 
-# pry(main)> turn.type
-# #=> :war
-#
 # pry(main)> winner = turn.winner
 # #=> #<Player:0x007fc42aab6b70 @deck=#<Deck:0x007fc42a248678...>, @name="Aurora">
 #
