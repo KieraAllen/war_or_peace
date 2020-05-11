@@ -16,7 +16,6 @@ class Turn
       :mutually_assured_destruction
     else
       :war
-
     end
   end
 
@@ -33,6 +32,8 @@ class Turn
       elsif @player1.deck.rank_of_card_at(2) < @player2.deck.rank_of_card_at(2)
         @player2
       end
+    else
+      "No Winner"
     end
   end
 
@@ -44,6 +45,11 @@ class Turn
       3.times do
         @spoils_of_war << @player1.deck.remove_card
         @spoils_of_war << @player2.deck.remove_card
+      end
+    else
+      3.times do
+        @player1.deck.remove_card
+        @player2.deck.remove_card
       end
     end
   end
