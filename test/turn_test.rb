@@ -102,14 +102,10 @@ class TurnTest < Minitest::Test
       turn.pile_cards
       turn.spoils_of_war
       turn.award_spoils(winner)
+
       assert_equal deck1, player1.deck
       assert_equal deck2, player2.deck
+      assert_equal 1, deck1.cards.count
+      assert_equal 7, deck2.cards.count
     end
 end
-
-
-# pry(main)> player1.deck
-# #=> #<Deck:0x007fc42a05a258 @cards=[#<Card:0x007fc42a1580d8...>]>
-#
-# pry(main)> player2.deck
-# #=> #<Deck:0x007fc42a248678 @cards=[#<Card:0x007fc42a1b4c98...>, #<Card:0x007fc42a170fe8...>, #<Card:0x007fc42a0f1b58...>, #<Card:0x007fc42a2149e0...>, #<Card:0x007fc42a205508...>, #<Card:0x007fc42aa85a98...>, #<Card:0x007fc42a1e4790...>]>
